@@ -1,0 +1,15 @@
+.btn{
+    display: flex;
+    width:100px;
+    height: 40px;
+    justify-content: center;
+    align-items:center;
+    border-radius:5px;
+    /* background: linear-gradient(90deg, #5041b2 0%, #7969e6 100%); */
+    /* background: linear-gradient(90deg, #fd8355 0%, #f0576c 37%, #f79cbd 100%) */
+    background: #2884f6;
+    color: #fff;
+}
+.btn:hover {
+    color: #363f54;
+}

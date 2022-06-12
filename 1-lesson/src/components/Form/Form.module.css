@@ -1,0 +1,25 @@
+.main{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width:90%;
+    height: 80%; */
+    /* border-radius:10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 3%;
+    background: linear-gradient(270deg, #cef2fa 0%, #59bfef 100%);
+}
+h2{
+    color:#fff;
+}
+.button_wrapper{
+    width:65%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}

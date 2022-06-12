@@ -1,0 +1,17 @@
+.textarea{
+    width: 80%;
+    background: #eee;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+    padding: 5px;
+    border-radius: 5px;
+}
+.label {
+    display: flex;
+    width: 80%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
