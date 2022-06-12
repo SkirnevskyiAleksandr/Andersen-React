@@ -2,6 +2,7 @@
   "name": "1-lesson",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://skirnevskyialeksandr.github.io/Andersen-React/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -13,6 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy":"npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "eslint": "^8.17.0",
-    "eslint-plugin-react": "^7.30.0"
+    "eslint-plugin-react": "^7.30.0",
+    "gh-pages": "^4.0.0"
   }
 }
