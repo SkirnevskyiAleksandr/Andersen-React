@@ -6,16 +6,17 @@ import Textarea from './Textarea/Textarea.js';
 
 
 class Form extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			counter: 2
-		};
-	}
-	nextNumber = () => {
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		counter: 2
+	// 	};
+	// }
 
-		return this.setState({ counter: 3 });
-	};
+	// clearFunction = () => {
+	// 	console.log(`rrt`)
+	// }
+
 	render() {
 		return (
 			<form action="#" className={formStyles.main} method="post">
@@ -23,16 +24,15 @@ class Form extends React.Component {
 				<Input name="Name" />
 				<Input name="Last name" />
 				<Input name="Birthday" type="date" />
-				<Input name="Phone number" type="tel" />
+				<Input name="Phone number" type="tel" symbolLength={12} />
 				<Input name="Web-page" type="url" />
-				<Textarea name="Elevator pitch" type="textarea" rows='7' />
-				<Textarea name="Hurd skills" type='textarea' rows='7' />
-				<Textarea name="Your last project" type='textarea' rows='7' />
+				<Textarea name="Elevator pitch" type="textarea" rows='7' symbolLength={600} />
+				<Textarea name="Hurd skills" type='textarea' rows='7' symbolLength={600} />
+				<Textarea name="Your last project" type='textarea' rows='7' symbolLength={600} />
 				<div className={formStyles.button_wrapper}>
-					<Button name="Clear" color="red" />
-					<Button name="Save" />
+					<Button name="Clear" color="red" type="reset" />
+					<Button name="Save" type="button" />
 				</div>
-
 			</form>
 		);
 	}
