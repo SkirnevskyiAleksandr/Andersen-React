@@ -23,3 +23,17 @@ h2{
     justify-content: space-around;
     padding: 10px;
 }
+.btn {
+    display: flex;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #2884f6;
+    color: #fff;
+}
+
+.btn:hover {
+    color: #363f54;
+}
