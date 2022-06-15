@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Andersen-React/static/css/main.b476b1e6.css",
-    "main.js": "/Andersen-React/static/js/main.97a9b133.js",
+    "main.css": "/Andersen-React/static/css/main.8a522e37.css",
+    "main.js": "/Andersen-React/static/js/main.62d52111.js",
     "index.html": "/Andersen-React/index.html",
-    "main.b476b1e6.css.map": "/Andersen-React/static/css/main.b476b1e6.css.map",
-    "main.97a9b133.js.map": "/Andersen-React/static/js/main.97a9b133.js.map"
+    "main.8a522e37.css.map": "/Andersen-React/static/css/main.8a522e37.css.map",
+    "main.62d52111.js.map": "/Andersen-React/static/js/main.62d52111.js.map"
   },
   "entrypoints": [
-    "static/css/main.b476b1e6.css",
-    "static/js/main.97a9b133.js"
+    "static/css/main.8a522e37.css",
+    "static/js/main.62d52111.js"
   ]
 }
