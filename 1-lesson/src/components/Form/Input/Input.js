@@ -1,15 +1,11 @@
 import React from "react";
 import inputStyles from './Input.module.css';
 
-
 class Input extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            errorValue: '',
-            textInputValue: '',
-            telInputValue: '',
-            urlInputValue: ''
+            errorValue: ''
         }
     }
 
@@ -18,14 +14,10 @@ class Input extends React.Component {
         const firstSymbol = inputValue.charAt(0);
 
         if (firstSymbol !== firstSymbol.toUpperCase()) {
-            this.setState({
-                errorValue: `First symbol should be capital `
-            })
+            this.props.propsChange(this.props.propsErrorName, 'First symbol should be capital')
             return;
         } else {
-            this.setState({
-                errorValue: ''
-            })
+            this.props.propsChange(this.props.propsErrorName, '')
         }
     }
 
@@ -33,14 +25,10 @@ class Input extends React.Component {
         const telInput = event.target.value.split(' ').join('');
 
         if (Number.isNaN(+telInput)) {
-            this.setState({
-                errorValue: `you must enter only numbers `
-            })
+            this.props.propsChange(this.props.propsErrorName, 'you must enter only numbers')
             return;
         } else {
-            this.setState({
-                errorValue: ``
-            })
+            this.props.propsChange(this.props.propsErrorName, '')
         }
     }
 
@@ -48,13 +36,9 @@ class Input extends React.Component {
         const inputTrimValue = event.target.value.trim();
 
         if (!inputTrimValue.startsWith("https://") && inputTrimValue.length !== 0) {
-            this.setState({
-                errorValue: `you must enter: "https://" `
-            })
+            this.props.propsChange(this.props.propsErrorName, 'you must enter: "https://"')
         } else {
-            this.setState({
-                errorValue: ``
-            })
+            this.props.propsChange(this.props.propsErrorName, '')
         }
     }
 
@@ -77,15 +61,18 @@ class Input extends React.Component {
                 this.setState({
                     urlInputValue: event.target.value
                 })
-
         }
+    }
+    handleChange = (event) => {
+        this.validator(event)
+        this.props.propsChange(this.props.name, event.target.value)
     }
 
     render() {
         return (
             <label htmlFor="" className={inputStyles.label}>
                 {this.props.name}
-                <input onChange={this.validator}
+                <input onChange={this.handleChange}
                     maxLength={this.props.symbolLength}
                     type={this.props.type}
                     name={this.props.name}
@@ -93,7 +80,7 @@ class Input extends React.Component {
                     placeholder={this.props.name}
                     rows={this.props.rows}
                 />
-                <div className={inputStyles.warning}>{this.state.errorValue}</div>
+                <div className={inputStyles.warning}>{this.props.propsError}</div>
             </label>
         )
     }

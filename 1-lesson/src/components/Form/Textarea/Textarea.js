@@ -5,32 +5,37 @@ class Textarea extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputValue: 0,
-            errorValue: '',
-            readOnly: false
+            readOnly: false,
+            inputValue: 0
         }
+    }
+
+    handleChange = (event) => {
+        this.inputValueCounter(event)
+        this.props.propsChange(this.props.name, event.target.value)
     }
 
     inputValueCounter = (event) => {
-        if (event.target.value.length + 1 > this.props.symbolLength) {
+        const noTrim = event.target.value.trim();
+
+        if (noTrim.length === this.props.symbolLength) {
             this.setState({
-                inputValue: event.target.value.length,
-                errorValue: `you should enter not more than 600 symbols`
+                inputValue: noTrim.length,
             })
+            this.props.propsChange(this.props.propsErrorName, 'you should enter not more than 600 symbols')
         } else {
             this.setState({
-                inputValue: event.target.value.length,
-                errorValue: ``
+                inputValue: noTrim.length,
             })
+            this.props.propsChange(this.props.propsErrorName, '')
         }
     }
-
 
     render() {
         return (
             <label htmlFor="" className={TextareaStyle.label}>
                 {this.props.name}
-                <textarea onChange={this.inputValueCounter}
+                <textarea onChange={this.handleChange}
                     maxLength={this.props.symbolLength}
                     type={this.props.type}
                     name={this.props.name}
@@ -41,7 +46,7 @@ class Textarea extends React.Component {
                 />
                 <div className={TextareaStyle.count}>
                     <div className={TextareaStyle.warning}>
-                        {this.state.errorValue}
+                        {this.props.propsError}
                     </div>
                     <div>
                         <span>{this.state.inputValue}</span>

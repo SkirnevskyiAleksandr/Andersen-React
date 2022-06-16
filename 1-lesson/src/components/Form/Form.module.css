@@ -37,3 +37,6 @@ h2{
 .btn:hover {
     color: #363f54;
 }
+.emptyValue{
+    color:red;
+}
