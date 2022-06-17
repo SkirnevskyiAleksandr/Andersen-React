@@ -35,8 +35,10 @@ class Form extends React.Component {
 		})
 	}
 
-	isEmptyInput = () => {
+	isEmptyInput = (event) => {
 		const objKeys = Object.values(this.state);
+
+		event.preventDefault();
 
 		if (objKeys.some((elem) => { return elem === null })) {
 			this.setState({
@@ -46,6 +48,8 @@ class Form extends React.Component {
 			this.setState({
 				emptyValue: ''
 			})
+			this.props.tableFlag(true)
+			this.props.formState(this.state)
 		}
 	}
 
